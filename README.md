@@ -86,7 +86,7 @@ The implementation logs various metrics to Weights & Biases:
 ## Example
 
 ```bash
-python train.py --dataset fashion_mnist --epochs 20 --batch_size 64 --loss cross_entropy --optimizer adam --learning_rate 0.001 --num_layers 2 --hidden_size 128 --activation relu --weight_init Xavier --weight_decay 0.0001 --wandb_project "my_fashion_mnist" --wandb_entity "my_username"
+python train.py --dataset fashion_mnist --epochs 20 --batch_size 64 --loss cross_entropy --optimizer adam --learning_rate 0.001 --num_layers 2 --hidden_size 128 --activation relu --weight_init Xavier --weight_decay 0.0001 --wandb_project "fashion_mnist" --wandb_entity "myname"
 ```
 
 This command trains a neural network with 2 hidden layers of 128 neurons each, using ReLU activation, Adam optimizer, and Xavier initialization on the Fashion-MNIST dataset for 20 epochs.
