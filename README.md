@@ -1,5 +1,3 @@
-# Introduction-to-Deep-Learning-DA6401-
-
 # Assignment 1: Neural Network Implementation for MNIST and Fashion-MNIST
 
 In this project I have implemented a configurable feedforward neural network from scratch using NumPy, designed to train on MNIST and Fashion-MNIST datasets. It supports various optimizers, activation functions, loss functions, and network architectures.
