@@ -198,12 +198,15 @@ def softmax(Z):
     return expZ / np.sum(expZ, axis=1, keepdims=True)
 
 # Optimizer functions - UPDATED
+#sgd optimizer
 def sgd(weights, biases, grads_W, grads_b, learning_rate, v_W=None, v_b=None, moment2_W=None, moment2_b=None, **kwargs):
     for i in range(len(weights)):
         weights[i] -= learning_rate * grads_W[i]
         biases[i] -= learning_rate * grads_b[i]
     return weights, biases, [], [], [], []
 
+
+#momentum optimizer
 def momentum(weights, biases, grads_W, grads_b, learning_rate, v_W=None, v_b=None, moment2_W=None, moment2_b=None, **kwargs):
     momentum_param = kwargs.get('momentum_param', 0.9)
     if not v_W:
@@ -218,6 +221,7 @@ def momentum(weights, biases, grads_W, grads_b, learning_rate, v_W=None, v_b=Non
         biases[i] += v_b[i]
     return weights, biases, v_W, v_b, [], []
 
+#nesterov optimizer
 def nesterov(weights, biases, grads_W, grads_b, learning_rate, v_W=None, v_b=None, moment2_W=None, moment2_b=None, **kwargs):
     momentum_param = kwargs.get('momentum_param', 0.9)
     if not v_W:
@@ -238,6 +242,7 @@ def nesterov(weights, biases, grads_W, grads_b, learning_rate, v_W=None, v_b=Non
         biases[i] = lookahead_b + v_b[i]
     return weights, biases, v_W, v_b, [], []
 
+#rmsprop optimizer
 def rmsprop(weights, biases, grads_W, grads_b, learning_rate, v_W=None, v_b=None, moment2_W=None, moment2_b=None, **kwargs):
     beta = kwargs.get('beta', 0.9)
     epsilon = kwargs.get('epsilon', 1e-6)
@@ -258,6 +263,7 @@ def rmsprop(weights, biases, grads_W, grads_b, learning_rate, v_W=None, v_b=None
         biases[i] -= learning_rate * grads_b[i] / (np.sqrt(v_b[i]) + epsilon)
     return weights, biases, v_W, v_b, [], []
 
+#adam optimizer
 def adam(weights, biases, grads_W, grads_b, learning_rate, v_W=None, v_b=None, moment2_W=None, moment2_b=None, **kwargs):
     beta1 = kwargs.get('beta1', 0.9)
     beta2 = kwargs.get('beta2', 0.999)
@@ -296,6 +302,7 @@ def adam(weights, biases, grads_W, grads_b, learning_rate, v_W=None, v_b=None, m
     
     return weights, biases, v_W, v_b, moment2_W, moment2_b
 
+#nadam optimizer
 def nadam(weights, biases, grads_W, grads_b, learning_rate, v_W=None, v_b=None, moment2_W=None, moment2_b=None, **kwargs):
     beta1 = kwargs.get('beta1', 0.9)
     beta2 = kwargs.get('beta2', 0.999)
@@ -374,7 +381,7 @@ def forward(X, weights, biases, activation):
 
 # Compute loss
 def compute_loss(y_true, y_pred, weights, weight_decay, loss_function="cross_entropy"):
-    if loss_function == "cross_entropy":
+    if loss_function == "cross_entropy":  
         loss = -np.mean(np.sum(y_true * np.log(y_pred + 1e-8), axis=1))
     else:  # mean_squared_error
         loss = np.mean(np.sum((y_true - y_pred) ** 2, axis=1)) / 2
