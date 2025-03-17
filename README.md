@@ -90,3 +90,6 @@ python train.py --dataset fashion_mnist --epochs 20 --batch_size 64 --loss cross
 ```
 
 This command trains a neural network with 2 hidden layers of 128 neurons each, using ReLU activation, Adam optimizer, and Xavier initialization on the Fashion-MNIST dataset for 20 epochs.
+
+## Link
+[Report](https://wandb.ai/da24m015-iitm/assignment_1/reports/Rajnish_Maurya-DA6401-Assignment-1--VmlldzoxMTcwOTAxMw)
