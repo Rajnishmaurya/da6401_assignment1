@@ -83,6 +83,12 @@ The implementation logs various metrics to Weights & Biases:
 - Confusion matrices for training and test sets
 - Final test accuracy
 
+## Code Organisation
+This assignment consists of two main Python files:
+
+- **train.py**: Contains the implementation of the model training pipeline, including data loading, model initialization, and the training loop. This file can be run directly to train the model with default parameters.
+- **hypertune.py**: Handles hyperparameter tuning experiments, leveraging Weights & Biases (WandB) for experiment tracking. This script explores different combinations of hyperparameters to find the optimal configuration for the model.
+
 ## Example
 
 ```bash
