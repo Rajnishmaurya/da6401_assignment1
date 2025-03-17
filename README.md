@@ -87,7 +87,7 @@ The implementation logs various metrics to Weights & Biases:
 This assignment consists of two main Python files:
 
 - **train.py**: Contains the implementation of the model training pipeline, including data loading, model initialization, and the training loop. This file can be run directly to train the model with default parameters.
-- **hypertune.py**: Handles hyperparameter tuning experiments, leveraging Weights & Biases (WandB) for experiment tracking. This script explores different combinations of hyperparameters to find the optimal configuration for the model.
+- **hypertune.py**: Handles hyperparameter tuning experiments, leveraging Weights & Biases (WandB) for experiment tracking. This script explores different combinations of hyperparameters to find the optimal configuration for the model. For hypertune, we can change the method from random to bayes in the sweep_config to run all the combination of the hyperparameters. For random methond  in the sweep_config, we can set the run_cap limit which tells us about the many number of runs.
 
 ## Example
 
