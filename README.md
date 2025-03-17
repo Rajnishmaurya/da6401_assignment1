@@ -93,4 +93,6 @@ This command trains a neural network with 2 hidden layers of 128 neurons each, u
 
 ## Link
 [Report](https://wandb.ai/da24m015-iitm/assignment_1/reports/Rajnish_Maurya-DA6401-Assignment-1--VmlldzoxMTcwOTAxMw)
+
+
 [Github](https://github.com/Rajnishmaurya/da6401_assignment1)
